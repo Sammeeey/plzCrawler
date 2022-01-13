@@ -1,6 +1,10 @@
 # plzCrawler
 Python Software that can find topographical addresses based on spreadsheet - to add postal codes automatically
 
+Version Date: 2021-07-01
+
+pace: approximately 1 second/row
+
 ## Installation & Ausführung (German🇩🇪 Windows 10)
 
 ### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
@@ -20,23 +24,19 @@ Python Software that can find topographical addresses based on spreadsheet - to 
 
 ##### <span style="font-family: Calibri, sans-serif;">Zu Software-Dateien navigieren</span>
 
-1.  <a name="__RefNumPara__99_17893717511"></a><span style="font-family: Calibri, sans-serif;">Pfad kopieren, in dem sich Crawler-Dateien befinden ("plzcrawler.py" & "plzMaker.py")</span>
+1.  <span style="font-family: Calibri, sans-serif;">"Eingabeaufforderung" (CMD) öffnen</span>
 
-    1.  <span style="font-family: Calibri, sans-serif;">Ordner öffenen in dem sich Crawler-Dateien befinden (z.B. Win-Taste > "[Ordner-Name]" > Ordner auswählen</span>
+    1.  <span style="font-family: Calibri, sans-serif;">Windows-Taste + R drücken > "cmd" eingeben > Enter drücken</span>
 
-    2.  <span style="font-family: Calibri, sans-serif;">in Ordnerfenster: auf Ordnersymbol in Pfad-Zeile klicken (Text wird blau hinterlegt) > rechtsklick auf blau hinterlegten Text > "kopieren"</span>
-
-2.  <span style="font-family: Calibri, sans-serif;">"Eingabeaufforderung" (CMD) öffnen</span>
-
-    1.  <span style="font-family: Calibri, sans-serif;">Windows-Taste > "cmd" eingeben > "Eingabeaufforderung" auswählen</span>
-
-3.  <span style="font-family: Calibri, sans-serif;">In CMD zu Pfad navigieren, in dem sich Crawler-Dateien befinden</span>
-
-    1.  <span style="font-family: Calibri, sans-serif;">Text nach folgendem Muster eingeben:  
-        cd [KOPIERTER PFAD]  
-        Beispiel:  
+2.  <span style="font-family: Calibri, sans-serif;">In CMD zu Pfad navigieren, in dem sich Crawler-Dateien ("plzCrawler.py" & "plzMaker.py") und das requirements.txt befinden</span>
+    1. <span style="font-family: Calibri, sans-serif;">Text nach folgendem Muster eingeben:  
         cd C:\Users\Username\Documents\plzcrawler</span>
 
+##### <span style="font-family: Calibri, sans-serif;">Virtuelle Umgebung (venv) erstellen</span>
+
+1.  <span style="font-family: Calibri, sans-serif;">Folgenden Text in CMD eingeben & Eingabetaste drücken (um virtuelle Umgebung mit dem Namen "venv" zu erstellen):  
+    py -m venv venv</span>
+    
 ##### <span style="font-family: Calibri, sans-serif;">venv aktivieren</span>
 
 1.  <span style="font-family: Calibri, sans-serif;">Folgenden Text in CMD eingeben & Eingabetaste drücken:  
