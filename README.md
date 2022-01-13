@@ -5,6 +5,8 @@ Version Date: 2021-07-01
 
 pace: approximately 1 second/row
 
+![Before and After image that shows functionality of this github project](https://github.com/Sammeeey/plzCrawler/blob/main/example%20images/BeforeAfterSpreadsheet.png?raw=true)
+
 ## Installation & Ausführung (German🇩🇪 Windows 10)
 
 ### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
