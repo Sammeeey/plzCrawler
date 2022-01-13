@@ -1,9 +1,9 @@
 # plzCrawler
 Python Software that can find topographical addresses based on spreadsheet - to add postal codes automatically
 
-<span style="font-family: Calibri, sans-serif;"><span style="font-size: xx-large;">**Installation & Ausführung**</span></span>
+## Installation & Ausführung (German🇩🇪 Windows 10)
 
-## <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
+### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
 
 1.  <span style="font-family: Calibri, sans-serif;">PLZ-Crawler-Software herunterladen (zip-datei), entpacken & enthaltenen Ordner speichern</span>
 
@@ -16,7 +16,7 @@ Python Software that can find topographical addresses based on spreadsheet - to 
 
     2.  <span style="font-family: Calibri, sans-serif;">Tabellen-Spalten: Name, Straße (Format: _<span style="font-weight: normal;">Straßenname Hausnummer</span>_, PLZ (leer), Stadt</span>
 
-## <span style="font-family: Calibri, sans-serif;">Ausführung</span>
+### <span style="font-family: Calibri, sans-serif;">Ausführung</span>
 
 <span style="font-family: Calibri, sans-serif;">_Hinweis: Während das Programm arbeitet_ _am besten_ _keine der Tabellen öffnen_</span>
 
