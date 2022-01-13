@@ -3,6 +3,8 @@ Python Software that can find topographical addresses based on spreadsheet - to 
 
 Version Date: 2021-07-01
 
+pace: approximately 1 second/row
+
 ## Installation & Ausführung (German🇩🇪 Windows 10)
 
 ### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
