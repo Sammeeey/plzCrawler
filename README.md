@@ -5,11 +5,9 @@ Python Software that can find topographical addresses based on spreadsheet - to 
 
 ### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
 
-1.  <span style="font-family: Calibri, sans-serif;">PLZ-Crawler-Software herunterladen (zip-datei), entpacken & enthaltenen Ordner speichern</span>
+1.  <span style="font-family: Calibri, sans-serif;">ggf. Python auf PC installieren, sofern noch nicht geschehen</span>
 
-2.  <span style="font-family: Calibri, sans-serif;">ggf. Python auf PC installieren, sofern noch nicht geschehen</span>
-
-3.  <span style="font-family: Calibri, sans-serif;">(ggf. Excelsheet entsprechend Rahmenbedingungen vorbereiten  
+2.  <span style="font-family: Calibri, sans-serif;">(ggf. Excelsheet entsprechend Rahmenbedingungen vorbereiten  
     – sofern noch nicht geschehen)</span>
 
     1.  <span style="font-family: Calibri, sans-serif;">.xlsx-Format</span>
