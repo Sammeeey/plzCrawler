@@ -1,5 +1,5 @@
 # plzCrawler
-Python Software that can find topographical addresses based on spreadsheet - to add postal codes automatically
+Python command line tool which finds topographical addresses based on spreadsheet data and adds postal codes automatically
 
 Version Date: 2021-07-01
 
