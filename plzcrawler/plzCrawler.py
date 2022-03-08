@@ -164,6 +164,7 @@ class AddressFinder:
 
 
 
+
 # f = AddressFinder()
 # openn = f.openAddressTable('Adressen für Herr Hartmann gekürzt', 'Addressen', r'C:\Users\Samuel\Documents\Business\WebCrawling Freelancing\Kunden WebCrawling Automatisierung\Nils Henkel Excel PLZ Crawler')
 # extract1, extract2 = f.getColumnLists(openn)
