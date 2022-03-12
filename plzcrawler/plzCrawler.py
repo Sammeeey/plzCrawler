@@ -114,13 +114,13 @@ class AddressFinder:
                     self.placePlzListe.append('N/A - keine PLZ gefunden')
 
             except AttributeError as atError:
-                print('It is a '+str(atError.__class__.__name__) + ' error occurred.\n'
+                print('an '+str(atError.__class__.__name__) + ' error occurred.\n'
                     'Most likely the "addesstags" entry in the API request was an empty list.\n'
                     'which means the address could not be found.', end=2*'\n')
                 self.placePlzListe.append('N/A - address cannot be found')
 
             except IndexError as inError:
-                print('it is a '+str(inError.__class__.__name__) + ' error occurred.\n'
+                print('an '+str(inError.__class__.__name__) + ' error occurred.\n'
                         'Apparently no map entry was found for the address.\n'
                         'This could be because the address has an unusual format.', end=2*'\n')
                 self.placePlzListe.append('N/A - Check address format!')
@@ -154,7 +154,7 @@ class AddressFinder:
     # save new table
     def savePlzTable(self, inputDfName):
         """takes pandas dataframe;
-        saves pandas dataframe under the original table name (with "+zip code") in the form of an .xlsx table"""
+        saves pandas dataframe under the original table name (with "+PLZ") in the form of an .xlsx table"""
 
         inputDfName.to_excel(f'{self.excelTableNameString}+PLZ.xlsx', sheet_name=self.workSheetString)
 
