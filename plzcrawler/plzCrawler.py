@@ -23,11 +23,6 @@ class AddressFinder:
         self.placeIdListe = []
 
     def openAddressTable(self):
-        # """nimmt Name einer Exceltabelle in Form eines Strings,
-        # den Namen des entsprechenden Tabellenblattes in Form eines Strings,
-        # & die Windows-Tabellen-Directory in Form eines Raw-Strings;
-        # navigiert zum angegebenen Windows-Pfad & öffnet die Tabelle als pandas-dataframe;
-        # speichert Tabelle als pandas dataframe-object"""
         '''
         takes the name of an Excel spreadsheet in the form of a string,
         the name of the corresponding spreadsheet in the form of a string,
@@ -51,18 +46,17 @@ class AddressFinder:
         outputs selected column values in lists of equal length
         '''
 
-        # Get column "names" from input table (dataframe-object).
-        namen = addressDataframe['Name']
+        # Get column "namen" from input table (dataframe-object).
+        namen = addressDataframe['Namen']
         namenNpArray = namen.values
         self.namenListe = list(namenNpArray)
         
-        
-        # Get column "Street" from input table (dataframe-object).
+        # Get column "Straße" from input table (dataframe-object).
         strassen = addressDataframe['Straße']
         strassenNpArray = strassen.values
         self.strassenListe = list(strassenNpArray)
         
-        # Get column "City" from input table (dataframe-object).
+        # Get column "Stadt" from input table (dataframe-object).
         stadt = addressDataframe['Stadt']
         stadtNpArray = stadt.values
         self.stadtListe = list(stadtNpArray)
@@ -114,13 +108,13 @@ class AddressFinder:
                     self.placePlzListe.append('N/A - keine PLZ gefunden')
 
             except AttributeError as atError:
-                print('an '+str(atError.__class__.__name__) + ' error occurred.\n'
+                print('An '+str(atError.__class__.__name__) + ' error occurred.\n'
                     'Most likely the "addesstags" entry in the API request was an empty list.\n'
                     'which means the address could not be found.', end=2*'\n')
                 self.placePlzListe.append('N/A - address cannot be found')
 
             except IndexError as inError:
-                print('an '+str(inError.__class__.__name__) + ' error occurred.\n'
+                print('An '+str(inError.__class__.__name__) + ' error occurred.\n'
                         'Apparently no map entry was found for the address.\n'
                         'This could be because the address has an unusual format.', end=2*'\n')
                 self.placePlzListe.append('N/A - Check address format!')
