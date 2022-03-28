@@ -72,8 +72,8 @@ class AddressFinder:
         uses nominatum tool & the individual strings within the input lists (as addresses) to perform a search in the OpenStreetMap API;
         gives the zip code of the first search result or (if not found) a placeholder ('N/A') in the form of a list
         """
-        #print(f'Straßenliste (Input): {strassenListe}')
-        #print(f'Stadtliste (Input): {stadtListe}')
+        #print(f'street list (input): {strassenListe}')
+        #print(f'city list (input): {stadtListe}')
 
         for i, strasse in enumerate(strassenListe, start=-1):
             print(strasse)
