@@ -1,13 +1,13 @@
 # plzCrawler
-Python command line tool which finds topographical addresses based on spreadsheet data and adds postal codes automatically
+Python command line tool das topografische Adressen anhand von Tabellendaten findet und automatisch Postleitzahlen hinzufügt
 
-Version Date: 2021-07-01
+Versionsdatum: 2021-07-01
 
-pace: approximately 1 second/row
+Geschwindigkeit: etwa 1 Sekunde/Zeile
 
 ![Before and After image that shows functionality of this github project](https://github.com/Sammeeey/plzCrawler/blob/main/example_images/BeforeAfterSpreadsheet.png?raw=true)
 
-## Live Usage (Sample Application)
+## Live Nutzung (Beispielanwendung)
 https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-bcc9-80df0c651c82.mp4
 
 ## Installation & Ausführung (German🇩🇪 Windows 10)
