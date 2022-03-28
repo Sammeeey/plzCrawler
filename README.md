@@ -10,56 +10,62 @@ pace: approximately 1 second/row
 ## Live Usage (Sample Application)
 https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-bcc9-80df0c651c82.mp4
 
-## Installation & Ausführung (German🇩🇪 Windows 10)
+## Installation & Execution (English 🇺🇸 🇬🇧 Windows 10)
 
-### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
+### Installation & Preparation
 
-1.  <span style="font-family: Calibri, sans-serif;">ggf. Python auf PC installieren, sofern noch nicht geschehen</span>
+1.  <span style="font-family: Calibri, sans-serif;">if necessary, install Python on the PC if you have not already done so</span>
 
-2.  <span style="font-family: Calibri, sans-serif;">(ggf. Excelsheet entsprechend Rahmenbedingungen vorbereiten  
-    – sofern noch nicht geschehen)</span>
+2.  <span style="font-family: Calibri, sans-serif;">(If necessary, prepare an Excel sheet according to the general conditions - if not already done)</span>
 
     1.  <span style="font-family: Calibri, sans-serif;">.xlsx-Format</span>
 
-    2.  <span style="font-family: Calibri, sans-serif;">Tabellen-Spalten: Name, Straße (Format: _<span style="font-weight: normal;">Straßenname Hausnummer</span>_, PLZ (leer), Stadt</span>
+    2.  Table columns:
+        
+        *Name*
+        
+        *Straße* (english: street; format: street name house number)
+        
+        *PLZ* (english: zip code (empty column))
+        
+        *Stadt* (english: city)
 
-### <span style="font-family: Calibri, sans-serif;">Ausführung</span>
+### <span style="font-family: Calibri, sans-serif;">Execution</span>
 
-<span style="font-family: Calibri, sans-serif;">_Hinweis: Während das Programm arbeitet_ _am besten_ _keine der Tabellen öffnen_</span>
+<span style="font-family: Calibri, sans-serif;">_Note: While the program is working best do not open any of the tables_</span>
 
-##### <span style="font-family: Calibri, sans-serif;">Zu Software-Dateien navigieren</span>
+##### <span style="font-family: Calibri, sans-serif;">Navigate to software files</span>
 
-1.  <span style="font-family: Calibri, sans-serif;">"Eingabeaufforderung" (CMD) öffnen</span>
+1.  <span style="font-family: Calibri, sans-serif;">Open "Command Prompt" (CMD).</span>
 
-    1.  <span style="font-family: Calibri, sans-serif;">Windows-Taste + R drücken > "cmd" eingeben > Enter drücken</span>
+    1.  <span style="font-family: Calibri, sans-serif;">Press Windows key + R > type "cmd" > press Enter</span>
 
-2.  <span style="font-family: Calibri, sans-serif;">In CMD zu Pfad navigieren, in dem sich Crawler-Dateien ("plzCrawler.py" & "plzMaker.py") und das requirements.txt befinden</span>
-    1. <span style="font-family: Calibri, sans-serif;">Text nach folgendem Muster eingeben:  
-        cd C:\Users\Username\Documents\plzcrawler</span>
+2.  <span style="font-family: Calibri, sans-serif;">Navigate in CMD to path where crawler files ("plzCrawler_en.py" & "plzMaker.py") and the requirements.txt are located</span>
+    1. Enter text according to the following pattern: `cd C:\Users\Username\Documents\plzcrawler`
 
-##### <span style="font-family: Calibri, sans-serif;">Virtuelle Umgebung (venv) erstellen</span>
+##### Create virtual environment (venv)
 
-1.  <span style="font-family: Calibri, sans-serif;">Folgenden Text in CMD eingeben & Eingabetaste drücken (um virtuelle Umgebung mit dem Namen "venv" zu erstellen):  
-    py -m venv venv</span>
+1.  Type the following text in CMD & press Enter (to create a virtual environment named "venv"): `py -m venv venv`
     
-##### <span style="font-family: Calibri, sans-serif;">venv aktivieren</span>
+##### activate venv
 
-1.  <span style="font-family: Calibri, sans-serif;">Folgenden Text in CMD eingeben & Eingabetaste drücken:  
-    venv\Scripts\activate.bat</span>
+1.  Type the following text in CMD & press Enter: `venv\Scripts\activate.bat`
 
-##### <span style="font-family: Calibri, sans-serif;">**Requirements.txt in venv installieren**</span>
+##### install requirements.txt in venv
 
-1.  <span style="font-family: Calibri, sans-serif;">Folgenden Text in CMD eingeben & Eingabetaste drücken:  
-    pip install -r requirements.txt</span>
+1.  Type the following text in CMD & press Enter: `pip install -r requirements.txt`
 
-##### <span style="font-family: Calibri, sans-serif;">ausführende Datei ("plzMaker.py") ausführen und Anweisungen folgen</span>
+##### Run the executable file ("plzMaker.py") and follow the instructions
 
-1.  <span style="font-family: Calibri, sans-serif;"><span style="text-decoration: none;">Folgenden Text in CMD eingeben & Eingabetaste drücken:  
-    </span>py plzMaker.py</span>
+1.  Type the following text in CMD & press Enter: `py plzMaker.py`
 
-##### <span style="font-family: Calibri, sans-serif;">fertiges Tabellendokument finden</span>
+##### find finished spreadsheet
 
-<span style="font-family: Calibri, sans-serif;">Das fertige Tabellendokument befindet sich im Ordner des ursprünglichen Tabellendokumentes.  
-Es ist erkennbar an der '+PLZ'-Endung.  
-Das neue Dokument sieht dem ursprünglichen Dokument sehr ähnlich und ist nun um die gefundenen Postleitzahlen ergänzt.  
-Außerdem enthält es ggf. Hinweise, weshalb einzelne Postleitzahlen nicht gefunden werden konnten.</span>
+The finished spreadsheet is in the folder of the original spreadsheet.
+It can be recognized by the '+PLZ' ending.
+The new document looks very similar to the original document and now includes the postcodes found.
+It may also contain information as to why individual postcodes could not be found.
+
+
+
+
