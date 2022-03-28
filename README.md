@@ -10,9 +10,9 @@ pace: approximately 1 second/row
 ## Live Usage (Sample Application)
 https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-bcc9-80df0c651c82.mp4
 
-## Installation & Ausführung (German🇩🇪 Windows 10)
+## Installation & Execution (English 🇺🇸 🇬🇧 Windows 10)
 
-### <a name="__RefHeading___Toc104_1789371751"></a><span style="font-family: Calibri, sans-serif;">Installation & Vorbereitung</span>
+### Installation & Preparation
 
 1.  <span style="font-family: Calibri, sans-serif;">if necessary, install Python on the PC if you have not already done so</span>
 
