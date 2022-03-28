@@ -1,5 +1,5 @@
 #! python3
-#plzcrawler.py - Program for adding postal codes to the address table
+#plzcrawler.py - Programm zur Ergänzung von Postleitzahlen in Adresstabelle
 # https://nominatim.openstreetmap.org
 
 import requests
@@ -8,7 +8,7 @@ from pprint import pprint
 import os
 import pandas as pd
 
-# Read street & city for all rows from .xlsx table and make them available in Python
+# Straße & Stadt für alle Zeilen aus .xlsx-Tabelle rauslesen und in Python verfügbar machen
 class AddressFinder:
     def __init__(self, excelTableNameString, workSheetString, tableDirectoryRawString, *args):
         self.workSheetString = workSheetString
@@ -23,40 +23,37 @@ class AddressFinder:
         self.placeIdListe = []
 
     def openAddressTable(self):
-        '''
-        takes the name of an Excel spreadsheet in the form of a string,
-        the name of the corresponding spreadsheet in the form of a string,
-        & the Windows table directory in the form of a raw string;
-        navigate to the specified windows path & open the table as pandas-dataframe;
-        saves table as pandas dataframe-object
-        '''
-        # Navigate to directory containing table
+        """nimmt Name einer Exceltabelle in Form eines Strings,
+        den Namen des entsprechenden Tabellenblattes in Form eines Strings,
+        & die Windows-Tabellen-Directory in Form eines Raw-Strings;
+        navigiert zum angegebenen Windows-Pfad & öffnet die Tabelle als pandas-dataframe;
+        speichert Tabelle als pandas dataframe-object"""
+
+        # zu directory navigieren, die Tabelle enthält
         dir = os.chdir(self.tableDirectoryRawString)
         # print(Path.cwd())
 
         openedAddressTable = pd.read_excel(open(f'{self.excelTableNameString}.xlsx', 'rb'),
-                                        sheet_name=self.workSheetString)
+                                          sheet_name=self.workSheetString)
         # print(df)
         return openedAddressTable
 
     def getColumnLists(self, addressDataframe):
-        '''
-        takes panda's dataframe object as an input argument;
-        pulls relevant columns out of input-object;
-        outputs selected column values in lists of equal length
-        '''
+        """nimmt pandas dataframe-object als input-argument;
+        holt relevante Spalten aus input-object heraus;
+        gibt ausgewählte Spaltenwerte in Listen gleicher Länge aus"""
 
-        # Get column "Name" from input table (dataframe-object).
+        # Spalte "Namen" aus Input-Tabelle (dataframe-object) holen
         namen = addressDataframe['Name']
         namenNpArray = namen.values
         self.namenListe = list(namenNpArray)
-        
-        # Get column "Straße" from input table (dataframe-object).
+
+        # Spalte "Straße" aus Input-Tabelle (dataframe-object) holen
         strassen = addressDataframe['Straße']
         strassenNpArray = strassen.values
         self.strassenListe = list(strassenNpArray)
-        
-        # Get column "Stadt" from input table (dataframe-object).
+
+        # Spalte "Stadt" aus Input-Tabelle (dataframe-object) holen
         stadt = addressDataframe['Stadt']
         stadtNpArray = stadt.values
         self.stadtListe = list(stadtNpArray)
@@ -64,14 +61,15 @@ class AddressFinder:
         return self.namenListe, self.strassenListe, self.stadtListe
 
 
-    # perform Nominatum searches on all rows
-    # Assumption: lists of the same length with column data from table
+    #Nominatum Suchanfragen für alle Zeilen durchführen
+    #Annahme: Listen gleicher Länge mit Spalten-Daten aus Tabelle
     def searchAddress(self, strassenListe, stadtListe):
-        """
-        takes street names & numbers, as well as city names in the form of lists of the same length;
-        uses nominatum tool & the individual strings within the input lists (as addresses) to perform a search in the OpenStreetMap API;
-        gives the zip code of the first search result or (if not found) a placeholder ('N/A') in the form of a list
-        """
+        """nimmt Staßennamen & -nummern, sowie Stadtnamen in Form von gleichlangen Listen;
+        führt mithilfe des Nominatum-Tools & der einzelnen Strings innerhalb der input-Listen (als Adressen)
+        eine Suche in der OpenStreetMap-API durch;
+        gibt die Postleitzahlen des jeweils ersten Suchergebnisses
+        oder (bei Nicht-Finden) einen Platzhalter ('N/A') in Form einer Liste aus"""
+
         #print(f'Straßenliste (Input): {strassenListe}')
         #print(f'Stadtliste (Input): {stadtListe}')
 
@@ -106,30 +104,34 @@ class AddressFinder:
                     self.placePlzListe.append('N/A - keine PLZ gefunden')
 
             except AttributeError as atError:
-                print('An '+str(atError.__class__.__name__) + ' error occurred.\n'
-                    'Most likely the "addesstags" entry in the API request was an empty list.\n'
-                    'which means the address could not be found.', end=2*'\n')
-                self.placePlzListe.append('N/A - address cannot be found')
+                print('Es ist ein '+str(atError.__class__.__name__)+ ' Error aufgetreten.\n'
+                      'Wahrscheinlich war der "addesstags"-Eintrag in der API-Anfrage eine leere Liste.\n'
+                        'Das heißt die Adresse konnte nicht gefunden werden.', end=2*'\n')
+                self.placePlzListe.append('N/A - Adresse unauffindbar')
 
             except IndexError as inError:
-                print('An '+str(inError.__class__.__name__) + ' error occurred.\n'
-                        'Apparently no map entry was found for the address.\n'
-                        'This could be because the address has an unusual format.', end=2*'\n')
-                self.placePlzListe.append('N/A - Check address format!')
+                print('Es ist ein '+str(inError.__class__.__name__)+ ' Error aufgetreten.\n'
+                        'Scheinbar wurde kein Karteneintrag für die Adresse gefunden.\n'
+                        'Das könnte daran liegen, dass die Adresse ein ungewöhnliches Format hat.', end=2*'\n')
+                self.placePlzListe.append('N/A - Adressformat prüfen!')
 
         return self.placePlzListe, self.placeIdListe
+        # placePlzListe aus "Adressen für Herr Hartmann gekürzt.xlsx" Länge = 49:
+        # kurzPlzListe = ['47051', '47119', '47249', '47051', '47053', '47228', '47057', '47239', '47057', '44139', '44139', '44135', '44135', 'N/A - Adresse unauffindbar', '44135', 'N/A - Adresse unauffindbar', '44263', '44225', '44263', '42275', '42283', '42275', '42285', '42107', '42283', '42275', '42103', '42103', '42117', '48153', None, None, '48143', '48143', '48151', '48155', '48155', '48155', '48143', '40219', '40477', '40477', '40479', '40219', 'N/A - Adressformat prüfen!', '40210', '40215', '40219', '40233']
 
 
-# Add zip code of first search result for each row in .xlsx table
+# PLZ des ersten Suchergebnisses für jede Zeile in .xlsx-Tabelle ergänzen
     def makePlzDataframe(self):
-        """takes column data (at least one(!), from original table) in the form of lists;
-        converts this to a dictionary;
-        outputs combined lists of column names in the form of a pandas dataframe"""
+        """nimmt Spaltendaten (mindestens eine(!), aus urpsrünglicher Tabelle) in Form von Listen;
+        konvertiert diese in ein Dictioinary;
+        gibt kombinierte Listen mit Spaltennamen in Form eines pandas-dataframe aus"""
+
         # # list of name, degree, score
         # firstColumnList = self.namenListe
         # secondColumnList = self.strassenListe
         # thirdColumnList = self.placePlzListe
         # fourthColumnList = self.stadtListe
+
         # dictionary of lists
         plzDict = {
             'Name': self.namenListe,
@@ -141,16 +143,16 @@ class AddressFinder:
         plzDf = pd.DataFrame(plzDict)
         return plzDf
 
-    # save new table
+    # neue Tabelle speichern
     def savePlzTable(self, inputDfName):
-        """takes pandas dataframe;
-        saves pandas dataframe under the original table name (with "+PLZ") in the form of an .xlsx table"""
+        """nimmt pandas-dataframe;
+        speichert pandas dataframe unter ursprünglichem Tabellennamen (mit "+PLZ") in Form einer .xlsx-Tabelle"""
 
         inputDfName.to_excel(f'{self.excelTableNameString}+PLZ.xlsx', sheet_name=self.workSheetString)
 
 
-#todo: Clean code, make it understandable & document it
 
+#todo: Code bereinigen, verständlich machen & dokumentieren
 
 
 
