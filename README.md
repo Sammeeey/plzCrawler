@@ -46,7 +46,7 @@ https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-
 1.  <span style="font-family: Calibri, sans-serif;">Type the following text in CMD & press Enter:
      venv\Scripts\activate.bat</span>
 
-##### <span style="font-family: Calibri, sans-serif;">**Requirements.txt in venv to install**</span>
+##### <span style="font-family: Calibri, sans-serif;">**install requirements.txt in venv**</span>
 
 1.  <span style="font-family: Calibri, sans-serif;">Type the following text in CMD & press Enter:
      pip install -r requirements.txt</span>
