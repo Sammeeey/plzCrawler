@@ -46,8 +46,8 @@ class AddressFinder:
         outputs selected column values in lists of equal length
         '''
 
-        # Get column "namen" from input table (dataframe-object).
-        namen = addressDataframe['Namen']
+        # Get column "Name" from input table (dataframe-object).
+        namen = addressDataframe['Name']
         namenNpArray = namen.values
         self.namenListe = list(namenNpArray)
         
@@ -64,15 +64,13 @@ class AddressFinder:
         return self.namenListe, self.strassenListe, self.stadtListe
 
 
-    #Nominatum Perform searches on all rows
-    #Assumption: lists of the same length with column data from table
+    # perform Nominatum searches on all rows
+    # Assumption: lists of the same length with column data from table
     def searchAddress(self, strassenListe, stadtListe):
         """
         takes street names & numbers, as well as city names in the form of lists of the same length;
-        leads using the nominatum tool & the individual strings within the input lists (as addresses)
-        perform a search in the OpenStreetMap API;
-        gives the zip code of the first search result
-        or (if not found) a placeholder ('N/A') in the form of a list
+        uses nominatum tool & the individual strings within the input lists (as addresses) to perform a search in the OpenStreetMap API;
+        gives the zip code of the first search result or (if not found) a placeholder ('N/A') in the form of a list
         """
         #print(f'Straßenliste (Input): {strassenListe}')
         #print(f'Stadtliste (Input): {stadtListe}')
@@ -120,8 +118,6 @@ class AddressFinder:
                 self.placePlzListe.append('N/A - Check address format!')
 
         return self.placePlzListe, self.placeIdListe
-        # placePlzList from "Addresses for Mr. Hartmann shortened.xlsx" Length = 49:
-        # kurzPlzListe = ['47051', '47119', '47249', '47051', '47053', '47228', '47057', '47239', '47057', '44139', '44139', '44135', '44135', 'N/A - address cannot be found', '44135', 'N/A - address cannot be found', '44263', '44225', '44263', '42275', '42283', '42275', '42285', '42107', '42283', '42275', '42103', '42103', '42117', '48153', None, None, '48143', '48143', '48151', '48155', '48155', '48155', '48143', '40219', '40477', '40477', '40479', '40219', 'N/A - Check address format!', '40210', '40215', '40219', '40233']
 
 
 # Add zip code of first search result for each row in .xlsx table
