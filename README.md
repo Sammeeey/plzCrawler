@@ -20,7 +20,15 @@ https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-
 
     1.  <span style="font-family: Calibri, sans-serif;">.xlsx-Format</span>
 
-    2.  <span style="font-family: Calibri, sans-serif;">Table columns: name, street (Format: _<span style="font-weight: normal;">street name house number</span>_,ZIP (empty), city</span>
+    2.  Table columns:
+        
+        *Name*
+        
+        *Straße* (english: street; format: street name house number)
+        
+        *PLZ* (english: zip code (empty column))
+        
+        *Stadt* (english: city)
 
 ### <span style="font-family: Calibri, sans-serif;">Execution</span>
 
@@ -32,36 +40,31 @@ https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-
 
     1.  <span style="font-family: Calibri, sans-serif;">Press Windows key + R > type "cmd" > press Enter</span>
 
-2.  <span style="font-family: Calibri, sans-serif;">Navigate in CMD to path where crawler files ("plzCrawler.py" & "plzMaker.py") and the requirements.txt are located</span>
-    1. <span style="font-family: Calibri, sans-serif;">Enter text according to the following pattern:  
-        cd C:\Users\Username\Documents\plzcrawler</span>
+2.  <span style="font-family: Calibri, sans-serif;">Navigate in CMD to path where crawler files ("plzCrawler_en.py" & "plzMaker.py") and the requirements.txt are located</span>
+    1. Enter text according to the following pattern: `cd C:\Users\Username\Documents\plzcrawler`
 
-##### <span style="font-family: Calibri, sans-serif;">Create virtual environment (venv).</span>
+##### Create virtual environment (venv)
 
-1.  <span style="font-family: Calibri, sans-serif;">Type the following text in CMD & press Enter (to create a virtual environment named "venv"):
-     py -m venv venv</span>
+1.  Type the following text in CMD & press Enter (to create a virtual environment named "venv"): `py -m venv venv`
     
-##### <span style="font-family: Calibri, sans-serif;">activate venv</span>
+##### activate venv
 
-1.  <span style="font-family: Calibri, sans-serif;">Type the following text in CMD & press Enter:
-     venv\Scripts\activate.bat</span>
+1.  Type the following text in CMD & press Enter: `venv\Scripts\activate.bat`
 
-##### <span style="font-family: Calibri, sans-serif;">**install requirements.txt in venv**</span>
+##### install requirements.txt in venv
 
-1.  <span style="font-family: Calibri, sans-serif;">Type the following text in CMD & press Enter:
-     pip install -r requirements.txt</span>
+1.  Type the following text in CMD & press Enter: `pip install -r requirements.txt`
 
-##### <span style="font-family: Calibri, sans-serif;">Run the executable file ("plzMaker.py") and follow the instructions</span>
+##### Run the executable file ("plzMaker.py") and follow the instructions
 
-1.  <span style="font-family: Calibri, sans-serif;"><span style="text-decoration: none;">Type the following text in CMD & press Enter:
-    </span>py plzMaker.py</span>
+1.  Type the following text in CMD & press Enter: `py plzMaker.py`
 
-##### <span style="font-family: Calibri, sans-serif;">find finished spreadsheet</span>
+##### find finished spreadsheet
 
-<span style="font-family: Calibri, sans-serif;">The finished spreadsheet is in the folder of the original spreadsheet.
+The finished spreadsheet is in the folder of the original spreadsheet.
 It can be recognized by the '+PLZ' ending.
 The new document looks very similar to the original document and now includes the postcodes found.
-It may also contain information as to why individual postcodes could not be found.</span>
+It may also contain information as to why individual postcodes could not be found.
 
 
 
