@@ -8,8 +8,7 @@ pace: approximately 1 second/row
 ![Before and After image that shows functionality of this github project](https://github.com/Sammeeey/plzCrawler/blob/main/example_images/BeforeAfterSpreadsheet.png?raw=true)
 
 ## Live Usage (Sample Application)
-https://user-images.githubusercontent.com/49591562/149321073-ea311b45-3d7a-4d35-bcc9-80df0c651c82.mp4
-
+https://github.com/Sammeeey/plzCrawler/assets/49591562/292f1dcb-a94b-434c-9b6d-cc5aaf860193
 ## Installation & Execution (English 🇺🇸 🇬🇧 Windows 10)
 
 ### Installation & Preparation
